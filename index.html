@@ -1,0 +1,51 @@
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Simon Czech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Hallo, ich bin Simon.">
+    <meta name="author" content="Simon Czech">
+    <link rel="icon" href="images/rocket_favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <script src="scripts/particles.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function() {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+    </script>
+    <section id="navbar">
+
+    </section>
+    <section id="intro">
+        <div class="text_block">
+            <h1>Hallo,<br>
+                ich bin <text class="accent">Simon</text>.
+            </h1>
+            <h2>Eines Tages wird hier noch mehr stehen... Ganz bestimmt!</h2>
+	    <h2><br><a href="mailto:hello@simon-czech.de" style="color:#1cc885">Schreib mir :)</a></h2>
+        </div>
+        <img src="images/earth-rocket.svg" class="earth">
+    </section>
+</body>
+</html>
